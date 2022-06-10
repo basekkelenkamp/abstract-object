@@ -7,7 +7,7 @@ def main():
     url = "https://dashboard.cphsense.com/api/v2/auth/new"
     value = {
           "username": "basekkelenkamp1@gmail.com",
-          "password": "Partikler",
+          "password": os.getenv("PASSWORD"),
         }
 
     # POST request for json json data
