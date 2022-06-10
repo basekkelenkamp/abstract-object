@@ -1,4 +1,6 @@
 # Abstract object API
+Easy integration of sensor data API for 'Abstract Object' project, Medialab CMGT
+https://dashboard.cphsense.com/api/v2/
 
 ## Initialize app
 - Download poetry
@@ -9,5 +11,6 @@
 - run source .env
 - run poetry run python app.py
 
-Easy integration of sensor data API for 'Abstract Object' project, Medialab CMGT
-https://dashboard.cphsense.com/api/v2/
+## hotfix
+If bug: Address already in use
+- freeport 5000 (or a similar program to free up port 5000)
