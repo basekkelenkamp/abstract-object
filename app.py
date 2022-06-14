@@ -4,6 +4,8 @@ import requests
 from pprint import pprint
 from flask import Flask, render_template, session, redirect, request, url_for
 
+from data_extractor import DataExtractor
+
 os.environ["FLASK_APP"] = "app.py"
 app = Flask(__name__)
 
@@ -39,6 +41,8 @@ def get_data(device_id, token):
     r = requests.get(url, headers={"Authorization": token})
     response = r.json()
     pprint(response)
+    extractor = DataExtractor(response, ['co2', 'pm2.5'])
+
     return response
 
 
