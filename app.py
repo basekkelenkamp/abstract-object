@@ -46,5 +46,15 @@ def get_data(device_id, token):
     return response
 
 
+def get_latest_data(device_id, token):
+    url = f'https://dashboard.cphsense.com/api/v2/devices/{device_id}/latest'
+    r = requests.get(url, headers={"Authorization": token})
+    response = r.json()
+    pprint(response)
+    extractor = DataExtractor(response, ['co2', 'pm2.5'])
+
+    return response
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
