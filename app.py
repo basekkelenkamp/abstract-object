@@ -41,7 +41,8 @@ def get_data(device_id, token):
     r = requests.get(url, headers={"Authorization": token})
     response = r.json()
     pprint(response)
-    extractor = DataExtractor(response, ['co2', 'pm2.5'])
+    extractor = DataExtractor(response, ['co2', 'pm2_5'])
+    extractor.save_latest_data(get_latest_data(device_id, token))
 
     return response
 
@@ -51,7 +52,7 @@ def get_latest_data(device_id, token):
     r = requests.get(url, headers={"Authorization": token})
     response = r.json()
     pprint(response)
-    extractor = DataExtractor(response, ['co2', 'pm2.5'])
+    # extractor = DataExtractor(response, ['co2', 'pm2_5'])
 
     return response
 
